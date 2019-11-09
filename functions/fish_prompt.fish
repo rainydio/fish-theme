@@ -1,11 +1,11 @@
 function fish_prompt
-  set -l RETVAL $status
+  set -l status_ $status
   set -l uid (id -u $USER)
 
   set_color blue
   echo -ns (prompt_pwd)
 
-  if [ $RETVAL != 0 ]
+  if [ $status_ != 0 ]
     set_color red
     echo -ns "!"
   else
