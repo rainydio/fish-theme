@@ -2,7 +2,7 @@ function fish_prompt
   set -l status_ $status
   set -l uid (id -u $USER)
 
-  set_color blue
+  set_color brblue
   echo -ns (prompt_pwd)
 
   if [ $status_ != 0 ]
