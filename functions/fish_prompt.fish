@@ -1,24 +1,26 @@
 function fish_prompt
-  set -l status_ $status
-  set -l uid (id -u $USER)
+  set -l code $status
 
   set_color brblue
   echo -ns (prompt_pwd)
 
-  if [ $status_ != 0 ]
-    set_color red
-    echo -ns "!"
-  else
-    echo -ns " "
-  end
-
-  if [ $uid = 0 ]
+  if [ $code != 0 ]
     set_color red
   else
     set_color white
   end
-
-  echo -ns "\$ "
+  
+  echo -ns " \$ "
 
   set_color normal
+end
+
+function fish_right_prompt
+  set -l code $status
+
+  if [ $code != 0 ]
+    set_color red
+    echo -ns "$code"
+    set_color normal
+  end
 end
