@@ -9,7 +9,7 @@ function fish_prompt
   else
     set_color white
   end
-  
+
   echo -ns " \$ "
 
   set_color normal
@@ -20,7 +20,12 @@ function fish_right_prompt
 
   if [ $code != 0 ]
     set_color red
-    echo -ns "$code"
+    echo -ns " $code"
     set_color normal
+  end
+
+  if set -q VIRTUAL_ENV
+    set -l venv (basename $VIRTUAL_ENV)
+    echo -ns " ($venv)"
   end
 end
