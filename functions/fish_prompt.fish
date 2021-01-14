@@ -1,7 +1,7 @@
 function fish_prompt
   set -l code $status
 
-  set_color brblue
+  set_color brcyan
   echo -ns (prompt_pwd)
 
   if [ $code != 0 ]
