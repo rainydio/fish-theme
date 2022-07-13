@@ -4,13 +4,12 @@ function fish_prompt
   set_color brcyan
   echo -ns (prompt_pwd)
 
-  if [ $code != 0 ]
-    set_color red
+  if test $code != 0
+    set_color brred
   else
     set_color white
   end
 
   echo -ns " \$ "
-
   set_color normal
 end
