@@ -44,7 +44,7 @@ function fish_right_prompt
   end
 
   if test $code != 0
-    set_color brred
+    set_color red
     echo -ns " $code"
     set_color normal
   end
