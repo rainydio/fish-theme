@@ -5,7 +5,7 @@ function fish_prompt
   echo -ns (prompt_pwd)
 
   if test $code != 0
-    set_color brred
+    set_color red
   else
     set_color white
   end
